@@ -1,0 +1,14 @@
+# Model checkpoints: often hundreds of MB to many GB, never commit them
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.bin
+
+# Compiled output from the hello-world exercises
+*.exe
+*.pdb
+
+# Python caches and notebook autosaves
+__pycache__/
+.ipynb_checkpoints/
