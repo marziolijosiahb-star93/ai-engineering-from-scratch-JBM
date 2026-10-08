@@ -1,0 +1,23 @@
+# Exercise 3: a project that needs both PyTorch and the Anthropic SDK.
+# This file is the "shopping list" for a project: it says what the project
+# needs, in loose terms. The lockfile next to it is the exact receipt.
+
+[project]
+name = "salon-assistant-demo"
+version = "0.1.0"
+description = "Practice project: local model (PyTorch) + Claude API (Anthropic SDK)"
+requires-python = ">=3.11"
+
+# Always installed.
+dependencies = [
+    "numpy>=1.26",
+    "python-dotenv>=1.0",   # reads the API key out of .env (lesson 00-04)
+]
+
+# Optional groups: install only the heavy parts you need.
+#   uv pip install -e ".[torch]"       base + PyTorch
+#   uv pip install -e ".[llm]"         base + Anthropic SDK
+#   uv pip install -e ".[torch,llm]"   everything
+[project.optional-dependencies]
+torch = ["torch>=2.3"]
+llm = ["anthropic>=0.39"]
